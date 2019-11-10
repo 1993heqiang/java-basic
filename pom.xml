@@ -28,7 +28,6 @@
           <groupId>org.easymock</groupId>
           <artifactId>easymock</artifactId>
           <version>3.5.1</version>
-          <scope>test</scope>
       </dependency>
       <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
       <dependency>
@@ -41,6 +40,13 @@
           <groupId>org.javassist</groupId>
           <artifactId>javassist</artifactId>
           <version>3.24.0-GA</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+      <dependency>
+        <groupId>cglib</groupId>
+        <artifactId>cglib</artifactId>
+        <version>3.2.12</version>
       </dependency>
   </dependencies>
 
