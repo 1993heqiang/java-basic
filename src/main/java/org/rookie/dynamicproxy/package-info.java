@@ -1,1 +1,0 @@
-package org.rookie.dynamicproxy;
