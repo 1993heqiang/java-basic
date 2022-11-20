@@ -3,6 +3,9 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <jpackage-maven-plugin.version>0.1.5</jpackage-maven-plugin.version>
+  </properties>
 
   <parent>
     <groupId>com.example</groupId>
@@ -13,57 +16,48 @@
 
   <artifactId>java-feature</artifactId>
   <name>java-feature</name>
+  <packaging>pom</packaging>
 
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-  </properties>
+  <modules>
+    <module>java9-feature</module>
+    <module>java10-feature</module>
+    <module>java11-feature</module>
+    <module>java12-feature</module>
+    <module>java13-feature</module>
+    <module>java14-feature</module>
+    <module>java15-feature</module>
+    <module>java16-feature</module>
+    <module>java17-feature</module>
+    <module>java-feature-others</module>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.javassist</groupId>
-      <artifactId>javassist</artifactId>
-    </dependency>
+    <!-- java module config -->
+    <module>mod-jlink</module>
+    <module>module-example</module>
+    <module>module-example-2</module>
+  </modules>
 
-    <dependency>
-      <groupId>cglib</groupId>
-      <artifactId>cglib</artifactId>
-    </dependency>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jmod-plugin</artifactId>
+          <version>3.0.0-alpha-1</version>
+          <extensions>true</extensions>
+        </plugin>
 
-    <!-- Test Framework -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
-    </dependency>
+        <plugin>
+          <artifactId>maven-jlink-plugin</artifactId>
+          <version>3.1.0</version>
+          <extensions>true</extensions>
+        </plugin>
 
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-suite-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-launcher</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-suite-engine</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-junit-jupiter</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+        <plugin>
+          <groupId>com.github.akman</groupId>
+          <artifactId>jpackage-maven-plugin</artifactId>
+          <version>${jpackage-maven-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
