@@ -27,7 +27,6 @@
     <dependency>
       <groupId>com.example</groupId>
       <artifactId>base</artifactId>
-      <version>${revision}</version>
     </dependency>
 
     <dependency>
@@ -114,4 +113,22 @@
     </profile>
 
   </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version> <!-- 与依赖项中的版本一致 -->
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
