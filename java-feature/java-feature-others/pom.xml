@@ -66,4 +66,39 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>java9-later</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <source>${maven.compiler.source}</source>
+              <target>${maven.compiler.target}</target>
+              <encoding>${project.build.sourceEncoding}</encoding>
+              <compilerArgs>
+                <!-- 确保ManagementFactoryTests不会编译失败 -->
+                <compilerArg>--add-exports=java.management/sun.management=ALL-UNNAMED</compilerArg>
+                <compilerArg>--add-opens=java.management/sun.management=ALL-UNNAMED</compilerArg>
+              </compilerArgs>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <!-- 确保ManagementFactoryTests不会执行失败 -->
+              <argLine>--add-exports=java.management/sun.management=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED</argLine>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

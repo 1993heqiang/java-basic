@@ -1,13 +1,17 @@
-package com.example;
+package com.example.testcontainers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
@@ -17,6 +21,7 @@ import redis.clients.jedis.JedisPool;
  * @since 2022/11/25
  **/
 @Testcontainers
+@DisabledIfSystemProperty(named = "docker.enabled", matches = "false")
 class TestcontainersTest {
 	private RedisBackedCache underTest;
 
@@ -30,7 +35,6 @@ class TestcontainersTest {
 	public void setUp() {
 		String address = redis.getHost();
 		Integer port = redis.getFirstMappedPort();
-		System.err.println(redis.getExposedPorts());
 
 		// Assume that we have Redis running locally?
 		underTest = new RedisBackedCache(address, port);
@@ -45,18 +49,19 @@ class TestcontainersTest {
 
 	private static class RedisBackedCache {
 
-		private JedisPool jedisPool;
+		private Jedis jedis;
 
 		public RedisBackedCache(String host, int port) {
-			this.jedisPool = new JedisPool(host, port);
+			this.jedis = new Jedis(host, port);
+			this.jedis.connect();
 		}
 
 		public String get(String key) {
-			return jedisPool.getResource().get(key);
+			return jedis.get(key);
 		}
 
 		public String put(String key, String value) {
-			return jedisPool.getResource().set(key, value);
+			return jedis.set(key, value);
 		}
 	}
 }

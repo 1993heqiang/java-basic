@@ -15,15 +15,25 @@
   <name>java-tools</name>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <reflections.version>0.10.2</reflections.version>
+    <netty.version>4.1.42.Final</netty.version>
+    <jedis.version>4.3.0</jedis.version>
+    <jcommander.version>1.82</jcommander.version>
+    <jopt-simple.version>6.0-alpha-3</jopt-simple.version>
   </properties>
 
   <dependencies>
     <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>base</artifactId>
+      <version>${revision}</version>
+    </dependency>
+
+    <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
+      <version>${netty.version}</version>
     </dependency>
 
     <dependency>
@@ -39,6 +49,34 @@
     <dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
+      <version>${jedis.version}</version>
+    </dependency>
+
+    <!-- Java runtime metadata analysis -->
+    <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>${reflections.version}</version>
+    </dependency>
+
+    <!-- Command line parsing framework for Java -->
+    <dependency>
+      <groupId>com.beust</groupId>
+      <artifactId>jcommander</artifactId>
+      <version>${jcommander.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sf.jopt-simple</groupId>
+      <artifactId>jopt-simple</artifactId>
+      <version>${jopt-simple.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+      <optional>true</optional>
     </dependency>
 
     <!-- Test Framework -->
@@ -66,4 +104,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>docker-env</id>
+      <properties>
+        <docker.enabled>true</docker.enabled>
+      </properties>
+    </profile>
+
+  </profiles>
 </project>
