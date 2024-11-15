@@ -95,7 +95,7 @@
 | `ngrok`       | 反向代理工具                                                                                                                    | [Link](https://ngrok.com/)                          |
 | `hyperfine`   | A command-line benchmarking tool.                                                                                         | [Link](https://github.com/sharkdp/hyperfine)        |
 | `Antora`      | AsciiDoc 文档站点生成器                                                                                                          | [Link](https://antora.org/)                         |
-| `jbake`       | Java based open source static site/blog generator for developers & designers.                                             | [Link](https://github.com/jbake-org/jbake)          |
+| `jbake`       | Java based open source static site/blog generator for developers & designers. eg: [Josh Long](https://github.com/joshlong/joshlong.github.io-content) | [Link](https://github.com/jbake-org/jbake)          |
 | `Sphinx`      | The Sphinx documentation generator. 建站                                                                                    | [Link](https://github.com/sphinx-doc/sphinx)        |
 | `chatgpt-web` | 用 Express 和 Vue3 搭建的 ChatGPT 演示网页                                                                                         | [Link](https://github.com/Chanzhaoyu/chatgpt-web)   |
 
@@ -145,3 +145,13 @@
 | seaweedfs      | SeaweedFS is a fast distributed storage system.                                          | [Link](https://github.com/seaweedfs/seaweedfs)                           |
 
 :white_check_mark:  :x: :star:
+
+# Linux命令
+
+# 
+
+| 命令   | 描述                            |                                              |
+| ---- | ----------------------------- | -------------------------------------------- |
+| eza  | A modern replacement for ls.  | [Link](https://github.com/eza-community/eza) |
+| bat  | 类似 cat(1)，但带有 git 集成和语法高亮.    | [Link](https://github.com/sharkdp/bat)       |
+| nano | nano 是一个字符终端的文本编辑器, 类似于vi/vim |                                              |
