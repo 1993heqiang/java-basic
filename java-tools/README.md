@@ -98,18 +98,21 @@
 | `jbake`       | Java based open source static site/blog generator for developers & designers. eg: [Josh Long](https://github.com/joshlong/joshlong.github.io-content) | [Link](https://github.com/jbake-org/jbake)          |
 | `Sphinx`      | The Sphinx documentation generator. 建站                                                                                    | [Link](https://github.com/sphinx-doc/sphinx)        |
 | `chatgpt-web` | 用 Express 和 Vue3 搭建的 ChatGPT 演示网页                                                                                         | [Link](https://github.com/Chanzhaoyu/chatgpt-web)   |
+| `ascii-art-generator` | 将图片或文本转为对应的ascii                                                                                                          | [Link](https://www.ascii-art-generator.org/)        |
+| `sampler`     | Sampler is a tool for shell commands execution, visualization and alerting. Shell执行工具,功能强大                                | [Link](https://github.com/sqshq/sampler)            |
+| `Reqable`     | Reqable是新一代API调试 + API测试一站化解决方案.类似于apifox、postman等工具.                                                                     | [Link](https://reqable.com/zh-CN/)                  |
 
 # Intellj plugin
 
-| 名称                   | 描述                                     |     |
-| -------------------- | -------------------------------------- | --- |
-| `kafkalytic`         | Kafka analysis tool                    |     |
-| `jclasslib`          | java字节码查看器                             |     |
-| `SonarLint`          | 代码问题检查与修复                              |     |
-| `Intellij Scripting` | 可以调试基于JVM的非java语言,例如:Java、Ruby、Python等 |     |
-| `Statistic`          | 代码统计插件                                 |     |
-| `MarsCode`           | MarsCode 是豆包旗下的智能编程助手                  |     |
-| `TONGYI Lingma`      | 通义灵码，是一款基于通义大模型的智能编码辅助工具               |     |
+| 名称                   | 描述                                     |
+| -------------------- | -------------------------------------- |
+| `kafkalytic`         | Kafka analysis tool                    |
+| `jclasslib`          | java字节码查看器                             |
+| `SonarLint`          | 代码问题检查与修复                              |
+| `Intellij Scripting` | 可以调试基于JVM的非java语言,例如:Java、Ruby、Python等 |
+| `Statistic`          | 代码统计插件                                 |
+| `MarsCode`           | MarsCode 是豆包旗下的智能编程助手                  |
+| `TONGYI Lingma`      | 通义灵码，是一款基于通义大模型的智能编码辅助工具               |
 
 # 待学习
 
